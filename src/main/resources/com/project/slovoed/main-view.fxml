@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.project.slovoed.controller.MainController"
+      spacing="10">
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+
+    <!-- Поиск и фильтры -->
+    <HBox spacing="10">
+        <TextField fx:id="searchField" promptText="Поиск по названию" HBox.hgrow="ALWAYS"/>
+        <ComboBox fx:id="disciplineFilter" promptText="Дисциплина" prefWidth="200"/>
+        <TextField fx:id="tagFilter" promptText="Поиск по тегу" prefWidth="200"/>
+    </HBox>
+
+    <!-- Таблица материалов -->
+    <TableView fx:id="materialsTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="titleColumn" text="Название" prefWidth="300"/>
+            <TableColumn fx:id="disciplineColumn" text="Дисциплина" prefWidth="200"/>
+            <TableColumn fx:id="dateColumn" text="Дата добавления" prefWidth="200"/>
+        </columns>
+    </TableView>
+
+    <!-- Форма добавления материала -->
+    <GridPane hgap="10" vgap="10">
+        <Label text="Название:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <TextField fx:id="titleField" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+        <Label text="Дисциплина:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <TextField fx:id="disciplineField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+        <Label text="Описание:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <TextArea fx:id="descriptionArea" prefRowCount="3" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+        <Label text="Теги (через запятую):" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+        <TextField fx:id="tagField" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+    </GridPane>
+
+    <!-- Кнопки управления -->
+    <HBox spacing="10">
+        <Button text="Добавить материал" onAction="#handleAddMaterial"/>
+        <Button text="Добавить файл" onAction="#handleAddFile"/>
+        <Button text="Добавить ссылку" onAction="#handleAddLink"/>
+    </HBox>
+
+</VBox> 

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.Button?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.project.organizer.controller.MainController"
+      spacing="10">
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+    <TextField fx:id="searchField" promptText="Поиск"/>
+    <ComboBox fx:id="disciplineFilter" promptText="Дисциплина"/>
+    <TextField fx:id="tagFilter" promptText="Тег"/>
+    <TableView fx:id="materialsTable">
+        <columns>
+            <TableColumn fx:id="titleColumn" text="Название"/>
+            <TableColumn fx:id="disciplineColumn" text="Дисциплина"/>
+            <TableColumn fx:id="dateColumn" text="Дата"/>
+        </columns>
+    </TableView>
+    <TextField fx:id="titleField" promptText="Название"/>
+    <TextField fx:id="disciplineField" promptText="Дисциплина"/>
+    <TextArea fx:id="descriptionArea" promptText="Описание" prefRowCount="4" minHeight="80"/>
+    <TextField fx:id="tagField" promptText="Теги (через запятую)"/>
+    <HBox spacing="10">
+        <Button text="Добавить материал" onAction="#handleAddMaterial"/>
+        <Button text="Добавить файл" onAction="#handleAddFile"/>
+        <Button text="Добавить ссылку" onAction="#handleAddLink"/>
+        <Button text="Удалить материал" onAction="#handleDeleteMaterial"/>
+    </HBox>
+</VBox> 

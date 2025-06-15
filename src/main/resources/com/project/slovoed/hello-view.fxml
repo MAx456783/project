@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+      prefWidth="600.0" style="-fx-background-color: #ffbf2e91" xmlns="http://javafx.com/javafx/17.0.2-ea"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.slovoed.HelloController">
+    <children>
+        <VBox prefHeight="200.0" prefWidth="300.0">
+            <children>
+                <Label/>
+                <Label prefHeight="16.0" prefWidth="350.0" text="Выберите пользователя: "/>
+                <ChoiceBox fx:id="choiceBox1" prefWidth="150.0"/>
+
+                <Label/>
+                <Button onAction="#addChoiceBox2" mnemonicParsing="false" text="Выбор жанра"/>
+
+                <Label/>
+                <Label prefHeight="16.0" prefWidth="350.0" text="Выберите вид литературы: "/>
+                <ChoiceBox fx:id="choiceBox2" layoutX="10.0" layoutY="10.0" prefHeight="20.0" prefWidth="150.0"/>
+
+                <Label/>
+                <Button onAction="#find" mnemonicParsing="false" text="Поиск"/>
+            </children>
+        </VBox>
+        <ScrollPane fx:id="viewpane" layoutX="23.0" layoutY="64.0" prefHeight="296.0" prefWidth="316.0" />
+        <TableView fx:id="table" editable="true" prefHeight="400.0" prefWidth="770.0"/>
+    </children>
+</HBox>
